@@ -21,3 +21,7 @@ workflows:
       - init
       - plan:
           extra_args: []
+    apply:
+      steps:
+      - run: terraform fmt -recursive -check=true -diff=true -write=false -no-color
+      - apply
