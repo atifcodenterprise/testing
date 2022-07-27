@@ -17,9 +17,9 @@ workflows:
   myworkflow:
     plan:
       steps:
-      - run: "printf 'print me'"
+      - run: terraform fmt
       - init
     apply:
       steps:
-      - run: echo hi
+      - run: terraform fmt
       - apply
