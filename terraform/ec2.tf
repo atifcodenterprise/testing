@@ -1,5 +1,5 @@
 resource "aws_security_group" "aws_sg" {
-  name = "security group for atlantisL"
+  name = "Atlantis-SG"
 
   ingress {
     description = "SSH from the internet"
