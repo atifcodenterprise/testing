@@ -15,11 +15,4 @@ projects:
   workflow: myworkflow
 workflows:
   myworkflow:
-    plan:
-      steps:
-      - run: terraform plan
-      - init
-    apply:
-      steps:
-      - run: terraform fmt -recursive -check=true -diff=true -write=false -no-color
-      - apply
+    
