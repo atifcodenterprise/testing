@@ -19,7 +19,10 @@ workflows:
       steps:
       - run: "printf 'print me'"
       - init
+      - plan:
+          extra_args: []
+      - run: "printf 'print me2'"
     apply:
       steps:
-      - run: "printf 'hi'"
+      - run: echo hi
       - apply
