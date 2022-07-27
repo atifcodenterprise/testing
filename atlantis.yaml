@@ -17,7 +17,6 @@ workflows:
   myworkflow:
     plan:
       steps:
-      - run: terraform fmt -recursive -check=true -diff=true -write=false -no-color
       - run: "printf 'plan step started'"
       - init:
           extra_args: ["-lock=false"]
