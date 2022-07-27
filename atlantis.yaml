@@ -17,10 +17,12 @@ workflows:
   myworkflow:
     plan:
       steps:
+      - run: "printf 'plan step started'"
       - init:
           extra_args: ["-lock=false"]
       - plan:
           extra_args: ["-lock=false"]
+      - run: "printf 'plan step ended'"
     apply:
       steps:
       - apply:
