@@ -5,7 +5,7 @@ parallel_plan: false
 parallel_apply: false
 projects:
 - name: my-test-project
-  dir: .
+  dir: terraform
   workspace: default
   terraform_version: "1.2.5"
   autoplan:
