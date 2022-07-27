@@ -17,6 +17,8 @@ workflows:
   myworkflow:
     plan:
       steps:
+      - init
+      - plan
     apply:
       steps:
       - run: terraform fmt -recursive -check=true -diff=true -write=false -no-color
