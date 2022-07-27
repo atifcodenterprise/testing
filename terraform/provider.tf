@@ -5,7 +5,7 @@ provider "aws" {
 
 terraform {
   backend "s3" {
-    bucket         = "atlantis-terraform-state" //s3 bucket name
+    bucket         = "atlantis-terraform-state-test" //s3 bucket name
     key            = "atlantis/terraform.tfstate"
     region         = "eu-west-1"
   }
