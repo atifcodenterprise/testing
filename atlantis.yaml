@@ -15,5 +15,9 @@ projects:
   workflow: myworkflow
 workflows:
   myworkflow:
-  
-    
+    plan:
+      steps:
+      - run: terraform fmt -recursive -check=true -diff=true -write=false -no-color
+      - init
+      - plan:
+          extra_args: []
