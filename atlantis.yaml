@@ -25,5 +25,7 @@ workflows:
       - run: "printf 'plan step ended'"
     apply:
       steps:
+      - run: "printf 'apply step started'"
       - apply:
           extra_args: ["-lock=false"]
+      - run: "printf 'apply step started'"
