@@ -36,7 +36,7 @@ resource "aws_instance" "aws_ins_web" {
   key_name                    = "aws-key-pair" # your key here
 
   tags = {
-    Name = "my own instance23"
+    Name = "my own instance"
   }
 
 }
