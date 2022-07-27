@@ -1,5 +1,5 @@
 resource "aws_security_group" "aws_sg" {
-  name = "security group from TF GITHUB"
+  name = "security group from TF"
 
   ingress {
     description = "SSH from the internet"
@@ -27,20 +27,20 @@ resource "aws_security_group" "aws_sg" {
 }
 
 
-resource "aws_instance" "aws_ins_web" {
+# resource "aws_instance" "aws_ins_web" {
 
-  ami                         = "ami-06bb94c46ddc47feb"
-  instance_type               = "t2.micro"
-  vpc_security_group_ids      = [aws_security_group.aws_sg.id]
-  associate_public_ip_address = true
-  key_name                    = "aws-key-pair" # your key here
+#   ami                         = "ami-06bb94c46ddc47feb"
+#   instance_type               = "t2.micro"
+#   vpc_security_group_ids      = [aws_security_group.aws_sg.id]
+#   associate_public_ip_address = true
+#   key_name                    = "aws-key-pair" # your key here
 
-  tags = {
-    Name = "my own instance1"
-  }
+#   tags = {
+#     Name = "my own instance1"
+#   }
 
-}
+# }
 
-output "instance_ip" {
-  value = aws_instance.aws_ins_web.public_ip
-}
+# output "instance_ip" {
+#   value = aws_instance.aws_ins_web.public_ip
+# }
