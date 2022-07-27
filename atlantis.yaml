@@ -17,9 +17,11 @@ workflows:
   myworkflow:
     plan:
       steps:
-      - init
-      - plan
+      - init:
+          extra_args: ["-lock=false"]
+      - plan:
+          extra_args: ["-lock=false"]
     apply:
       steps:
-      - run: terraform fmt -recursive -check=true -diff=true -write=false -no-color
-      - apply
+      - apply:
+          extra_args: ["-lock=false"]
