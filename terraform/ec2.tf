@@ -27,8 +27,6 @@ resource "aws_security_group" "aws_sg" {
 }
 
 
-
-
 resource "aws_instance" "aws_ins_web" {
 
   ami                         = "ami-06bb94c46ddc47feb"
