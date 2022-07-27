@@ -19,9 +19,6 @@ workflows:
       steps:
       - run: "printf 'print me'"
       - init
-      - plan:
-          extra_args: ["-lock", "false"]
-      - run: my-custom-command arg1 arg2
     apply:
       steps:
       - run: "echo 'hi'"
