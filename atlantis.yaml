@@ -4,7 +4,7 @@ delete_source_branch_on_merge: true
 parallel_plan: false
 parallel_apply: false
 projects:
-- name: my-test-project
+- name: myworkflow
   dir: terraform
   workspace: default
   terraform_version: "1.2.5"
@@ -13,8 +13,32 @@ projects:
     enabled: true
   apply_requirements: [mergeable]
   workflow: myworkflow
+- name: dev
+  dir: terraform
+  workspace: dev
+  terraform_version: "1.2.5"
+  autoplan:
+    when_modified: ["**/*"]
+    enabled: true
+  apply_requirements: [mergeable]
+  workflow: devworkflow
 workflows:
   myworkflow:
+    plan:
+      steps:
+      - run: "printf 'plan step started'"
+      - init:
+          extra_args: ["-lock=false"]
+      - plan:
+          extra_args: ["-lock=false"]
+      - run: "printf 'plan step ended'"
+    apply:
+      steps:
+      - run: "printf 'apply step started'"
+      - apply:
+          extra_args: ["-lock=false"]
+      - run: "printf 'apply step started'"
+  devworkflow:
     plan:
       steps:
       - run: "printf 'plan step started'"
