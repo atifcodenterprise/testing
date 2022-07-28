@@ -1,5 +1,5 @@
 resource "aws_security_group" "aws_sg" {
-  name = "SG - workspace ${terraform.workspace}"
+  name = "TestingSG - workspace ${terraform.workspace}"
 
   ingress {
     description = "SSH from the internet"
